@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --sky: #2178eb;
+    --lightsky: #8cc5fa;
+    --violetblack: #55637a;
+    --white: #fff;
+    --dirtywhite: #cecaca;
+    --skyshadow: #a6b5f8;
+    --lightbshadow: rgba(0,0,0,0.15);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(var(--sky) 0%, var(--lightsky) 100%);
+}
+.container{
+    width: 375px;
+    background: var(--white);
+    padding: 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px var(--lightbshadow);
+}
+.container i(
+    cursor: pointer;
+)
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
