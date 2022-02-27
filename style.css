@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Varela+Round&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -18,10 +20,12 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Varela Round', sans-serif;
     background: linear-gradient(var(--sky) 0%, var(--lightsky) 100%);
 }
 .container{
     width: 375px;
+    position: relative;
     background: var(--white);
     padding: 2rem 2rem;
     border-radius: 1rem;
@@ -30,7 +34,11 @@ body{
 .container i{
     cursor: pointer;
 }
-.top-bar{
+.top-bar, 
+.progress-container .timer,
+.controls, 
+.playlist .header,
+.playlist .li{
     display: flex;
     justify-content: space-between;
     align-items: center; 
@@ -38,9 +46,12 @@ body{
 .top-bar i{
     font-size: 2rem;
     color: var(--sky);
+    user-select: none;
 }
 .top-bar span{
     font-size: 1.5rem;
+    text-shadow: 1px 0 0;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     color: var(--lightbshadow);
 }
 .img-container{
@@ -58,14 +69,16 @@ body{
 }
 .song-details{
     text-align: center;
-    margin: 1.6rem;
+    margin: 2rem;
     color: var(--violetblack);
 }
 .song-details .name{
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    text-shadow: 1px 0 0;
 }
 .song-details .artist{
-    opacity: 0.6;
+    opacity: 0.9;
+    margin-top: 0.4rem;
 }
 .progress-container{
     height: 0.4rem;
@@ -89,6 +102,80 @@ body{
     border-radius: inherit;
     background: var(--violetblack);
     top: 50%;
-    right: 0.3rem;
+    right: 0.1rem;
     transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
+.progress-container:hover .progress-bar::before{
+    opacity: 1;
+}
+.timer span{
+    color: var(--violetblack);
+    user-select: none;
+    margin-top: 0.4rem;
+}
+.controls{
+    margin: 3rem 0 1rem 0;
+}
+.controls i{
+    font-size: 1.8rem;
+    user-select: none;
+    background: linear-gradient(90deg, var(--sky) 0%, var(--lightsky) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.controls i:nth-child(2),
+.controls i:nth-child(4){
+    font-size: 3rem;
+}
+.controls .play-pause{
+    height: 3.7rem;
+    width: 3.7rem;
+    border-radius: 50%;
+    background: linear-gradient(90deg, var(--white) 0%, var(--dirtywhite) 100%);
+    box-shadow: 0px 0px 5px 0px var(--sky);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play-pause::before{
+    content: "";
+    position: absolute;
+    height: 3.3rem;
+    width: 3.3rem;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--sky) 0%, var(--lightsky) 100%);
+}
+.play-pause i{
+    height: 3.3rem;
+    width: 3.3rem;
+    line-height: 3.3rem;
+    text-align: center;
+    position: relative;
+    border-radius: inherit;
+    background: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.playlist{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 375px;
+    padding: 1rem 2rem;
+    background: var(--white);
+    border-radius: 0.75rem;
+    box-shadow: 0rem -0.2rem 1.2rem var(--lightbshadow);
+}
+.playlist li{
+    list-style: none;
+}
+.playlist .header .row{
+    display: flex;
+    align-items: center;
+    color: var(--violetblack);
+}
+.playlist #
