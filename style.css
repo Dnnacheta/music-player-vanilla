@@ -38,7 +38,7 @@ body{
 .progress-container .timer,
 .controls, 
 .playlist .header,
-.playlist .li{
+.playlist li{
     display: flex;
     justify-content: space-between;
     align-items: center; 
@@ -163,19 +163,56 @@ body{
 .playlist{
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
     width: 375px;
     padding: 1rem 2rem;
     background: var(--white);
     border-radius: 0.75rem;
     box-shadow: 0rem -0.2rem 1.2rem var(--lightbshadow);
+    transition: all 0.15s ease-in-out;
 }
-.playlist li{
-    list-style: none;
+.playlist.show{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
 }
 .playlist .header .row{
     display: flex;
     align-items: center;
     color: var(--violetblack);
 }
-.playlist #
+.header .row span{
+    margin-left: 0.7rem;
+}
+.header #close{
+    color: var(--violetblack);
+}
+.playlist ul{
+    margin: 0.6rem 0;
+    font-family: 'Varela Round', sans-serif;
+    max-height: 11.4rem;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.playlist ul::-webkit-scrollbar{
+    display: none;
+}
+.playlist ul li{
+    cursor: pointer;
+    list-style: none;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid var(--dirtywhite);
+}
+.playlist ul li:last-child{
+    border-bottom: 0rem;
+}
+/* .playlist ul li .row span{
+    
+} */
+ul li .row p{
+    /* opacity: 0.6; */
+    color: var(--violetblack);
+}
