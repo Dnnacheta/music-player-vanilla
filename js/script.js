@@ -74,4 +74,7 @@ prevBtn.addEventListener("click", ()=> {
     prevMusic(); //calls the prevMusic function
 });
 
-// update 
+// update progressbar width according to music current time
+musicAudio.addEventListener("timeupdate", (e)=>{
+    console.log(e);
+})
